@@ -1,0 +1,37 @@
+# TEST pair_lj_exp_att potential
+
+variable fname index config.txt
+variable sname index polymer
+
+#initialisation
+
+units lj
+
+boundary p p p
+atom_style angle
+log log.${sname}.txt
+read_data ${fname}
+
+#potentials
+
+neighbor 1.0 bin
+neigh_modify every 1 delay 1 check yes
+
+pair_style lj/exp/att 0.76 0.76 0.0 1
+pair_coeff * * 200.0 0.0 0.76
+
+comm_modify cutoff 50
+
+group free type 1
+
+velocity free create 1.0 31299241 dist gaussian
+
+print "=== Running ==="
+
+fix 1 free nve
+fix 2 free langevin 1.0 1.0 1.0 3217891
+thermo 100
+timestep 0.002
+run 10000
+
+print "=== pair_lj_exp_att works ===" 
