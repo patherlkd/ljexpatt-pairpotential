@@ -42,12 +42,12 @@ The `pair_style`:
 ```
 pair_style lj/exp/att <cut> <dia> <epp> <WCA-switch>
 ```
-where <cut> is the cutoff for the total interaction i.e. any beads at or beyond this distance with have zero potential energy, <dia> is the hard sphere diameter (specifically the cutoff for the Weeks-Chandler-Anderson potential) and is smaller than <cut>, <epp> is the minimum of the pair potential (at <dia), and <WCA-switch> switches the Weeks-Chandler-Anderson potential on/off, e.g., if you wanted to use another repulsive energy potential instead.
+where `<cut>` is the cutoff for the total interaction i.e. any beads at or beyond this distance with have zero potential energy, `<dia>` is the hard sphere diameter (specifically the cutoff for the Weeks-Chandler-Anderson potential) and is smaller than `<cut>`, `<epp>` is the minimum of the pair potential (at `<dia>`), and `<WCA-switch>` switches the Weeks-Chandler-Anderson potential on/off, e.g., if you wanted to use another repulsive energy potential instead.
 
 The `pair_coeff`:
 ```
 pair_coeff <type_1> <type_2> <eps> <lambda>
 ```
-where <type_1> and <type_2> are particle types in LAMMPS, <eps> is the strength of the Weeks-Chandler-Anderson potential, and <lambda> is the decay length (normally set to the particle diameter).
+where `<type_1>` and `<type_2>` are particle types in LAMMPS, `<eps>` is the strength of the Weeks-Chandler-Anderson potential, and `<lambda>` is the decay length (normally set to the particle diameter).
 
 # ljexpatt-pairpotential
