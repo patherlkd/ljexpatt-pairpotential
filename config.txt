@@ -1,4 +1,4 @@
- === Config file for 2 beads for kD computation ===
+ === Config file for 2 beads ===
  
 	2	atoms
  
